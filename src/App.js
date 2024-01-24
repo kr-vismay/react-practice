@@ -1,24 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
-
+import React, { useState } from 'react';
+import Student from './Student';
+import Errormsg from './Errormsg';
+import Item from './Item';
+import Fooditems from './Fooditems';
 function App() {
+  // let things = ["apple","banana","greps","orange","mango"];
+  let things = [];
+function create(){
+  var NAME = prompt("enter your name");
+  console.log(NAME);
+  setName(NAME);
+}
+  const [name,setName]=useState();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+   <>
+  
+   <Fooditems items = {things}/>
+   
+   <Errormsg items = {things}/>
+   <div>
+    <h3>hello</h3>
+    <button onClick={create}>Enter Name</button>
+    <Student Name={name} />
+    
+    
+   </div>
+   </>
+    
   );
 }
 
